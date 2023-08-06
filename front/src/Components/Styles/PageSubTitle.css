@@ -1,0 +1,8 @@
+#pageSubTitle {
+    margin-bottom: 16px;
+    padding: 0 20px;
+    width: calc(100% - 40px);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--col-black);
+}

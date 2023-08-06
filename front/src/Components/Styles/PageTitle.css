@@ -1,0 +1,8 @@
+#pageTitle {
+    margin-bottom: 22px;
+    padding: 0 20px;
+    width: calc(100% - 40px);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--col-black);
+}

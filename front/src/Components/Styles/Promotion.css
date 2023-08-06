@@ -1,0 +1,69 @@
+#promotion {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    padding: 68px 24px 0px 24px;
+    width: calc(100% - 48px);
+    height: 400px;
+    background: black;
+}
+
+#promotion>.title {
+    flex: 1;
+    width: 100%;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--col-white)
+}
+
+#promotion .recommend {
+    margin-bottom: 24px;
+    width: 100%;
+    color: var(--col-white)
+}
+
+#promotion .recommend .title {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#promotion .recommend .list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+#promotion .recommend .list .item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+#promotion .recommend .list .item .thumb {
+    display: block;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #E5E5E5;
+    border-radius: 6px;
+}
+
+#promotion .recommend .list .item .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+    gap: 2px;
+}
+
+#promotion .recommend .list .item .info .songName {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#promotion .recommend .list .item .info .singerName {
+    font-size: 12px;
+    font-weight: 500;
+}

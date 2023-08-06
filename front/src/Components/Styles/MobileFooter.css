@@ -1,0 +1,135 @@
+#mobileFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    position: absolute;
+    bottom: calc(50vh - 422px);
+    width: 390px;
+    height: 139px;
+    border-radius: 0 0 32px 32px;
+    z-index: 1000;
+    transform: translate(0, 0);
+    overflow: hidden;
+}
+
+#playList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 54px;
+    background: rgba(249, 249, 249, 0.95);
+}
+
+#playList::before {
+    width: 100%;
+    height: 54px;
+    background: rgba(249, 249, 249, 0.95);
+    filter: blur(12px);
+}
+
+#playList .barWrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 2px;
+    background: var(--col-gray-3);
+}
+
+#playList .barWrap .bar {
+    width: 30%;
+    height: 2px;
+    background: var(--col-primary);
+}
+
+#playList .nowPlay {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: calc(100% - 48px);
+    padding: 0 24px;
+}
+
+#playList .nowPlay .songName {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--col-gray-4);
+}
+
+#playList .nowPlay .funcBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+
+#dock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 62px;
+    background: var(--col-white);
+}
+
+#dock .link,
+#dock .selLink {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dock .link .linkIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 2px;
+}
+
+/* #dock .link .linkIcon svg {
+    stroke: var(--col-gray-6);
+}
+
+#dock .selLink .linkIcon svg {
+    stroke: var(--col-primary);
+} */
+
+#dock .link .linkInfo {
+    height: 12px;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--col-gray-6);
+}
+
+#dock .selLink .linkInfo {
+    height: 12px;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--col-primary);
+}
+
+#controlBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 21px;
+    background: var(--col-white);
+}
+
+#controlBar .bar {
+    display: block;
+    margin: 8px;
+    width: 138px;
+    height: 5px;
+    background: var(--col-black);
+    border-radius: 100px;
+}

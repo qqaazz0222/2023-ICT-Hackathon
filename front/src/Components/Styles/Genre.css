@@ -1,0 +1,27 @@
+#genre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 40px;
+    padding: 0 16px;
+    width: calc(100% - 32px);
+}
+
+#genre .item {
+    padding: 8px 12px;
+    background: var(--col-gray-2);
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--col-gray-6);
+}
+
+#genre .sel-item {
+    padding: 8px 12px;
+    background: var(--col-primary);
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--col-white);
+}

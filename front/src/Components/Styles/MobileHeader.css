@@ -1,0 +1,27 @@
+#mobileHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    padding: 0 24px;
+    width: calc(390px - 48px);
+    height: 48px;
+    border-radius: 32px 32px 0 0;
+    z-index: 1000;
+}
+
+.light {
+    background: linear-gradient(var(--col-white), rgba(255, 255, 255, 0));
+    color: var(--col-black);
+}
+
+.dark {
+    background: linear-gradient(var(--col-black), rgba(0, 0, 0, 0));
+    color: var(--col-white);
+}
+
+#mobileHeader .time {
+    font-size: 17px;
+    font-weight: 600;
+}

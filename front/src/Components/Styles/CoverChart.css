@@ -1,0 +1,77 @@
+#coverChart {
+    display: flex;
+    flex-direction: column;
+    margin: 0 16px 20px 16px;
+    padding: 18px;
+    width: calc(100% - 68px);
+    background: var(--col-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--col-gray-2);
+}
+
+#coverChart .header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 32px;
+}
+
+#coverChart .header .title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--col-black);
+}
+
+#coverChart .header .subTitle {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--col-gray-5);
+}
+
+#coverChart .body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#coverChart .body .item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+#coverChart .body .item .thumb {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background-color: var(--col-gray-3);
+    border: 1px solid var(--col-gray-2);
+    border-radius: 4px;
+}
+
+#coverChart .body .item .rank {
+    width: 36px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#coverChart .body .item .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+#coverChart .body .item .info .songName {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--col-black);
+}
+
+#coverChart .body .item .info .singerName {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--col-gray-5);
+}
