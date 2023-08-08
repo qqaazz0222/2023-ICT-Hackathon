@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Styles/OverView.css";
+// 컴포넌트
 import PageTitle from "../Components/PageTitle";
 import Genre from "../Components/Genre";
 import PageSubTitle from "../Components/PageSubTitle";

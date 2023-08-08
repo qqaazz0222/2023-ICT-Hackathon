@@ -1,0 +1,23 @@
+#searchItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    padding: 0 20px;
+    width: calc(100% - 40px);
+    height: 52px;
+}
+
+#searchItem .no {
+    width: 28px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--col-primary);
+}
+
+#searchItem .value {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--col-black);
+}

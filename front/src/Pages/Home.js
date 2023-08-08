@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Styles/Main.css";
+import "./Styles/Home.css";
 // 컴포넌트
 import Promotion from "../Components/Promotion";
 import NewCover from "../Components/NewCover";
@@ -9,7 +9,7 @@ import Banner from "../Components/Banner";
 // 이미지
 import VoiceModelStudio from "./../Components/Images/VoiceModelStudio.png";
 
-const Main = ({ setCurrentPage, setColorMode }) => {
+const Home = ({ setCurrentPage, setColorMode }) => {
     useEffect(() => {
         setColorMode("dark");
     }, []);
@@ -77,4 +77,4 @@ const Main = ({ setCurrentPage, setColorMode }) => {
     );
 };
 
-export default Main;
+export default Home;

@@ -7,8 +7,9 @@ import ScrollToTop from "./Components/ScrollToTop";
 // 레이아웃
 import BaseLayout from "./Layout/BaseLayout";
 // 페이지
-import Main from "./Pages/Main";
+import Home from "./Pages/Home";
 import OverView from "./Pages/OverView";
+import Search from "./Pages/Search";
 
 function App() {
     const [currentPage, setCurrentPage] = useState("");
@@ -31,7 +32,7 @@ function App() {
                         <Route
                             path="/home"
                             element={
-                                <Main
+                                <Home
                                     pageTitle="홈"
                                     setCurrentPage={setCurrentPage}
                                     setColorMode={setColorMode}
@@ -43,6 +44,26 @@ function App() {
                             element={
                                 <OverView
                                     pageTitle="둘러보기"
+                                    setCurrentPage={setCurrentPage}
+                                    setColorMode={setColorMode}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/voicemodel"
+                            element={
+                                <OverView
+                                    pageTitle="음성모델"
+                                    setCurrentPage={setCurrentPage}
+                                    setColorMode={setColorMode}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/search"
+                            element={
+                                <Search
+                                    pageTitle="음성모델"
                                     setCurrentPage={setCurrentPage}
                                     setColorMode={setColorMode}
                                 />

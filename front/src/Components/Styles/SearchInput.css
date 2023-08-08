@@ -1,0 +1,29 @@
+#searchInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin: 0 20px 34px 20px;
+    padding: 0 14px;
+    height: 44px;
+    width: calc(100% - 68px);
+    background: var(--col-gray-1);
+    border-radius: 8px;
+}
+
+#searchInput input {
+    flex: 1;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--col-black);
+}
+
+#searchInput input::placeholder {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--col-gray-3);
+}
