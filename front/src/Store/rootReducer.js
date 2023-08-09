@@ -7,6 +7,7 @@ const persistConfig = {
 };
 
 const initialState = {
+    dockType: "default",
     userData: {},
     searchKeyword: "",
     searchData: [],
@@ -15,6 +16,12 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
     let temp = { ...state };
     switch (action.type) {
+        case "SET_DOCK_TYPE":
+            temp.dockType = action.payload;
+            return temp;
+        case "CLEAR_DOCK_TYOE":
+            temp.dockType = "default";
+            return temp;
         case "SET_USER_DATA":
             temp.userData = action.payload;
             return temp;

@@ -1,0 +1,67 @@
+#onProcess {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin: 0 20px;
+    padding: 18px;
+    width: calc(100% - 76px);
+    background: var(--col-primary);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--col-gray-2);
+    margin-bottom: 32px;
+}
+
+.onProcessNoData {
+    display: block;
+    margin: 0 20px 32px 20px;
+    width: calc(100% - 76px);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--col-gray-5);
+    box-shadow: none;
+}
+
+#onProcess .thumb {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: var(--col-gray-1);
+    border: 1px solid var(--col-gray-2);
+    border-radius: 4px;
+}
+
+#onProcess .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+#onProcess .info .songName {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--col-white);
+}
+
+#onProcess .info .singerName {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--col-gray-2);
+}
+
+#onProcess .status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--col-gray-2);
+}
+
+#onProcess .status .value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--col-white);
+}

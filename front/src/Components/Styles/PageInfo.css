@@ -1,0 +1,17 @@
+#pageInfo .subTitle {
+    margin-bottom: 4px;
+    padding: 0 20px;
+    width: calc(100% - 40px);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--col-black);
+}
+
+#pageInfo .info {
+    margin-bottom: 20px;
+    padding: 0 20px;
+    width: calc(100% - 40px);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--col-gray-5);
+}

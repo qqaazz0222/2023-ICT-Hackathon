@@ -11,99 +11,141 @@ import PlayIcon from "./Svg/Play.svg";
 import PlayListIcon from "./Svg/PlayList.svg";
 import PreIcon from "./Svg/Pre.svg";
 import NextIcon from "./Svg/Next.svg";
+import PlusIcon from "./Svg/Plus.svg";
+import { useSelector } from "react-redux";
 
-const MobileHeader = ({ colorMode }) => {
+const MobileFooter = ({ colorMode }) => {
     const { pathname } = useLocation();
-    // useEffect(() => {
-    //     window.scrollTo(0, 0);
-    // }, [pathname]);
-
+    const dockType = useSelector((state) => state.dockType);
+    useEffect(() => {
+        console.log(dockType);
+    }, [dockType]);
     return (
         <>
             <div id="mobileFooter">
-                <div id="playList">
-                    <div className="barWrap">
-                        <span className="bar" />
-                    </div>
-                    <div className="nowPlay">
-                        <div className="songName">재생목록이 비었습니다.</div>
-                        <div className="funcBtn">
-                            <img className="preBtn" src={PreIcon} alt="pre" />
-                            <img
-                                className="playBtn"
-                                src={PlayIcon}
-                                alt="play"
-                            />
-                            <img
-                                className="nextBtn"
-                                src={NextIcon}
-                                alt="next"
-                            />
-                            <img
-                                className="playListBtn"
-                                src={PlayListIcon}
-                                alt="playList"
-                            />
+                {dockType === "default" ? (
+                    <>
+                        <div id="playList">
+                            <div className="barWrap">
+                                <span className="bar" />
+                            </div>
+                            <div className="nowPlay">
+                                <div className="songName">
+                                    재생목록이 비었습니다.
+                                </div>
+                                <div className="funcBtn">
+                                    <img
+                                        className="preBtn"
+                                        src={PreIcon}
+                                        alt="pre"
+                                    />
+                                    <img
+                                        className="playBtn"
+                                        src={PlayIcon}
+                                        alt="play"
+                                    />
+                                    <img
+                                        className="nextBtn"
+                                        src={NextIcon}
+                                        alt="next"
+                                    />
+                                    <img
+                                        className="playListBtn"
+                                        src={PlayListIcon}
+                                        alt="playList"
+                                    />
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div id="dock">
-                    <Link
-                        to="/home"
-                        className={pathname === "/home" ? "selLink" : "link"}
-                    >
-                        <div className="linkIcon">
-                            <img src={HomeIcon} alt="Home" />
+                        <div id="dock">
+                            <Link
+                                to="/home"
+                                className={
+                                    pathname === "/home" ? "selLink" : "link"
+                                }
+                            >
+                                <div className="linkIcon">
+                                    <img src={HomeIcon} alt="Home" />
+                                </div>
+                                <div className="linkInfo">홈</div>
+                            </Link>
+                            <Link
+                                to="/overview"
+                                className={
+                                    pathname === "/overview"
+                                        ? "selLink"
+                                        : "link"
+                                }
+                            >
+                                <div className="linkIcon">
+                                    <img src={OverViewIcon} alt="OverView" />
+                                </div>
+                                <div className="linkInfo">둘러보기</div>
+                            </Link>
+                            <Link
+                                to="/model"
+                                className={
+                                    pathname === "/voicemodel"
+                                        ? "selLink"
+                                        : "link"
+                                }
+                            >
+                                <div className="linkIcon">
+                                    <img
+                                        src={VoiceModelIcon}
+                                        alt="VoiceModel"
+                                    />
+                                </div>
+                                <div className="linkInfo">음성모델</div>
+                            </Link>
+                            <Link
+                                to="/search"
+                                className={
+                                    pathname === "/search" ? "selLink" : "link"
+                                }
+                            >
+                                <div className="linkIcon">
+                                    <img src={SearchIcon} alt="Search" />
+                                </div>
+                                <div className="linkInfo">검색</div>
+                            </Link>
+                            <Link
+                                to="/my"
+                                className={
+                                    pathname === "/my" ? "selLink" : "link"
+                                }
+                            >
+                                <div className="linkIcon">
+                                    <img src={MyIcon} alt="My" />
+                                </div>
+                                <div className="linkInfo">마이</div>
+                            </Link>
                         </div>
-                        <div className="linkInfo">홈</div>
-                    </Link>
-                    <Link
-                        to="/overview"
-                        className={
-                            pathname === "/overview" ? "selLink" : "link"
-                        }
-                    >
-                        <div className="linkIcon">
-                            <img src={OverViewIcon} alt="OverView" />
+                        <div id="controlBar">
+                            <span className="bar-black"></span>
                         </div>
-                        <div className="linkInfo">둘러보기</div>
-                    </Link>
-                    <Link
-                        to="/voicemodel"
-                        className={
-                            pathname === "/voicemodel" ? "selLink" : "link"
-                        }
-                    >
-                        <div className="linkIcon">
-                            <img src={VoiceModelIcon} alt="VoiceModel" />
+                    </>
+                ) : (
+                    <></>
+                )}
+                {dockType === "modelCreate" ? (
+                    <>
+                        <div id="createModelFooter">
+                            <div className="addVoice">
+                                <img src={PlusIcon} alt="addVoice" />
+                                목소리 추가하기
+                            </div>
+                            <div id="controlBar" style={{ background: "none" }}>
+                                <span className="bar-white"></span>
+                            </div>
                         </div>
-                        <div className="linkInfo">음성모델</div>
-                    </Link>
-                    <Link
-                        to="/search"
-                        className={pathname === "/search" ? "selLink" : "link"}
-                    >
-                        <div className="linkIcon">
-                            <img src={SearchIcon} alt="Search" />
-                        </div>
-                        <div className="linkInfo">검색</div>
-                    </Link>
-                    <Link
-                        to="/my"
-                        className={pathname === "/my" ? "selLink" : "link"}
-                    >
-                        <div className="linkIcon">
-                            <img src={MyIcon} alt="My" />
-                        </div>
-                        <div className="linkInfo">마이</div>
-                    </Link>
-                </div>
-                <div id="controlBar">
-                    <span className="bar"></span>
-                </div>
+                    </>
+                ) : (
+                    <></>
+                )}
             </div>
         </>
     );
 };
 
-export default MobileHeader;
+export default MobileFooter;

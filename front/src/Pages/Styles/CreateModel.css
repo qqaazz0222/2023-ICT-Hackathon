@@ -1,12 +1,6 @@
-#search {
+#createModel {
     position: relative;
     padding-top: 68px;
     padding-bottom: 160px;
-    background: var(--col-white);
-}
-
-#searchPopUp {
-    position: relative;
-    padding-top: 68px;
     background: var(--col-white);
 }

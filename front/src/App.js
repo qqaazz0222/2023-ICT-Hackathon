@@ -10,6 +10,9 @@ import BaseLayout from "./Layout/BaseLayout";
 import Home from "./Pages/Home";
 import OverView from "./Pages/OverView";
 import Search from "./Pages/Search";
+import My from "./Pages/My";
+import CreateModel from "./Pages/CreateModel";
+import SearchPopUp from "./Pages/SearchPopUp";
 
 function App() {
     const [currentPage, setCurrentPage] = useState("");
@@ -50,7 +53,7 @@ function App() {
                             }
                         />
                         <Route
-                            path="/voicemodel"
+                            path="/model"
                             element={
                                 <OverView
                                     pageTitle="음성모델"
@@ -64,6 +67,36 @@ function App() {
                             element={
                                 <Search
                                     pageTitle="음성모델"
+                                    setCurrentPage={setCurrentPage}
+                                    setColorMode={setColorMode}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/My"
+                            element={
+                                <My
+                                    pageTitle="마이"
+                                    setCurrentPage={setCurrentPage}
+                                    setColorMode={setColorMode}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/model/create"
+                            element={
+                                <CreateModel
+                                    pageTitle="음성모델 만들기"
+                                    setCurrentPage={setCurrentPage}
+                                    setColorMode={setColorMode}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/model/search"
+                            element={
+                                <SearchPopUp
+                                    pageTitle="음성모델 만들기"
                                     setCurrentPage={setCurrentPage}
                                     setColorMode={setColorMode}
                                 />

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import "./Styles/Home.css";
 // 컴포넌트
 import Promotion from "../Components/Promotion";
@@ -10,6 +11,13 @@ import Banner from "../Components/Banner";
 import VoiceModelStudio from "./../Components/Images/VoiceModelStudio.png";
 
 const Home = ({ setCurrentPage, setColorMode }) => {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch({
+            type: "SET_DOCK_TYPE",
+            payload: "default",
+        });
+    }, [dispatch]);
     useEffect(() => {
         setColorMode("dark");
     }, []);

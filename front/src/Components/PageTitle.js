@@ -1,9 +1,24 @@
 import "./Styles/PageTitle.css";
+import CloseIcon from "./Svg/Close.svg";
 
-const PageTitle = ({ text }) => {
+const PageTitle = ({ text, close }) => {
     return (
         <>
-            <div id="pageTitle">{text}</div>
+            <div id="pageTitle">
+                {text}
+                {close ? (
+                    <div
+                        id="closeBtn"
+                        onClick={() => {
+                            window.history.back();
+                        }}
+                    >
+                        <img src={CloseIcon} alt="close" />
+                    </div>
+                ) : (
+                    <></>
+                )}
+            </div>
         </>
     );
 };

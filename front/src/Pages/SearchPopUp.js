@@ -6,12 +6,12 @@ import PageTitle from "../Components/PageTitle";
 import PageSubTitle from "../Components/PageSubTitle";
 import SearchInput from "../Components/SearchInput";
 import SearchItem from "../Components/SearchItem";
-const Search = ({ setCurrentPage, setColorMode }) => {
+const SearchPopUp = ({ setCurrentPage, setColorMode }) => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch({
             type: "SET_DOCK_TYPE",
-            payload: "default",
+            payload: "empty",
         });
     }, [dispatch]);
     useEffect(() => {
@@ -31,8 +31,8 @@ const Search = ({ setCurrentPage, setColorMode }) => {
     ];
     return (
         <>
-            <div id="search">
-                <PageTitle text="검색" />
+            <div id="searchPopUp">
+                <PageTitle text="검색" close={true} />
                 <SearchInput />
                 <PageSubTitle text="급상승 검색어" />
                 {data.map((item, idx) => (
@@ -43,4 +43,4 @@ const Search = ({ setCurrentPage, setColorMode }) => {
     );
 };
 
-export default Search;
+export default SearchPopUp;

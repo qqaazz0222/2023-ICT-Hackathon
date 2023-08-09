@@ -1,0 +1,35 @@
+#tab {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    width: calc(100% - 40px);
+    height: 32px;
+    border-bottom: 1px solid var(--col-gray-1);
+    overflow: scroll;
+}
+
+#tab .tabItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--col-gray-7);
+}
+
+
+#tab .selTabItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    height: 30px;
+    border-bottom: 2px solid var(--col-primary);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--col-primary);
+}

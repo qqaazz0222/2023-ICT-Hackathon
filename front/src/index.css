@@ -100,3 +100,30 @@ code {
 a {
     text-decoration: none;
 }
+
+.btn-white-border {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px 20px 20px;
+    padding: 12px 16px;
+    width: calc(100% - 40px);
+    background: var(--col-white);
+    border: 1px solid var(--col-gray-4);
+    border-radius: 100px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--col-black);
+    transition: background .1s, border .1s;
+}
+
+.btn-white-border:hover,
+.btn-white-border:focus {
+    width: calc(100% - 40px);
+    background: var(--col-primary);
+    border: 1px solid var(--col-primary);
+    font-weight: 600;
+    color: var(--col-white);
+}

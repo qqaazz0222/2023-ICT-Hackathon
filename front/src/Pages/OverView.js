@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import "./Styles/OverView.css";
 // 컴포넌트
 import PageTitle from "../Components/PageTitle";
@@ -7,6 +8,13 @@ import PageSubTitle from "../Components/PageSubTitle";
 import CoverChart from "../Components/CoverChart";
 
 const OverView = ({ setCurrentPage, setColorMode }) => {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch({
+            type: "SET_DOCK_TYPE",
+            payload: "default",
+        });
+    }, [dispatch]);
     useEffect(() => {
         setColorMode("light");
     }, []);
