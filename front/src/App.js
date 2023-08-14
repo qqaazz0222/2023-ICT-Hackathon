@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 // 기능
 import ScrollToTop from "./Components/ScrollToTop";
+import ClearSearch from "./Components/ClearSearch";
 // 레이아웃
 import BaseLayout from "./Layout/BaseLayout";
 // 페이지
@@ -13,6 +14,9 @@ import Search from "./Pages/Search";
 import My from "./Pages/My";
 import CreateModel from "./Pages/CreateModel";
 import SearchPopUp from "./Pages/SearchPopUp";
+import Record from "./Pages/Record";
+import Music from "./Pages/Music";
+import Play from "./Pages/Play";
 
 function App() {
     const [currentPage, setCurrentPage] = useState("");
@@ -22,6 +26,7 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 <ScrollToTop />
+                <ClearSearch />
                 <Routes>
                     <Route path="/" element={<></>} />
                     <Route
@@ -97,6 +102,36 @@ function App() {
                             element={
                                 <SearchPopUp
                                     pageTitle="음성모델 만들기"
+                                    setCurrentPage={setCurrentPage}
+                                    setColorMode={setColorMode}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/model/record"
+                            element={
+                                <Record
+                                    pageTitle="녹음"
+                                    setCurrentPage={setCurrentPage}
+                                    setColorMode={setColorMode}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/music"
+                            element={
+                                <Music
+                                    pageTitle="음악"
+                                    setCurrentPage={setCurrentPage}
+                                    setColorMode={setColorMode}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/play"
+                            element={
+                                <Play
+                                    pageTitle="재생"
                                     setCurrentPage={setCurrentPage}
                                     setColorMode={setColorMode}
                                 />

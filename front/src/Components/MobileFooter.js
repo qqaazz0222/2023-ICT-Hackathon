@@ -12,9 +12,12 @@ import PlayListIcon from "./Svg/PlayList.svg";
 import PreIcon from "./Svg/Pre.svg";
 import NextIcon from "./Svg/Next.svg";
 import PlusIcon from "./Svg/Plus.svg";
-import { useSelector } from "react-redux";
+import VoiceSingIcon from "./Svg/VoiceSing.svg";
+import MusicNoteIcon from "./Svg/MusicNote.svg";
+import { useDispatch, useSelector } from "react-redux";
 
 const MobileFooter = ({ colorMode }) => {
+    const dispatch = useDispatch();
     const { pathname } = useLocation();
     const dockType = useSelector((state) => state.dockType);
     useEffect(() => {
@@ -131,12 +134,76 @@ const MobileFooter = ({ colorMode }) => {
                 {dockType === "modelCreate" ? (
                     <>
                         <div id="createModelFooter">
-                            <div className="addVoice">
+                            <div
+                                className="addVoice"
+                                onClick={() => {
+                                    window.location.replace("/model/search");
+                                }}
+                            >
                                 <img src={PlusIcon} alt="addVoice" />
                                 목소리 추가하기
                             </div>
                             <div id="controlBar" style={{ background: "none" }}>
                                 <span className="bar-white"></span>
+                            </div>
+                        </div>
+                    </>
+                ) : (
+                    <></>
+                )}
+                {dockType === "modelSearch" ? (
+                    <>
+                        <div id="createModelFooter">
+                            <div
+                                className="addVoice"
+                                onClick={() => {
+                                    window.location.replace("/model/record");
+                                }}
+                            >
+                                <img
+                                    src={VoiceSingIcon}
+                                    alt="addVoice"
+                                    onClick={() => {
+                                        dispatch({
+                                            type: "CLAER_SEARCH_DATA",
+                                        });
+                                    }}
+                                />
+                                따라부르기
+                            </div>
+                            <div id="controlBar" style={{ background: "none" }}>
+                                <span className="bar-white"></span>
+                            </div>
+                        </div>
+                    </>
+                ) : (
+                    <></>
+                )}
+                {dockType === "submitVoice" ? (
+                    <>
+                        <div id="createModelFooter">
+                            <div
+                                className="addVoice"
+                                onClick={() => {
+                                    window.location.replace("/model/record");
+                                }}
+                            >
+                                <img src={MusicNoteIcon} alt="addVoice" />
+                                목소리 제출하기
+                            </div>
+                            <div id="controlBar" style={{ background: "none" }}>
+                                <span className="bar-white"></span>
+                            </div>
+                        </div>
+                    </>
+                ) : (
+                    <></>
+                )}
+                {dockType === "empty" ? (
+                    <>
+                        <div id="emptyFooter">
+                            <div id="controlBar" style={{ background: "none" }}>
+                                <span className="bar-black"></span>
                             </div>
                         </div>
                     </>

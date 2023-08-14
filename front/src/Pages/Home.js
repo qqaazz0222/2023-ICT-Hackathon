@@ -14,6 +14,9 @@ const Home = ({ setCurrentPage, setColorMode }) => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch({
+            type: "CLEAR_HISTORY",
+        });
+        dispatch({
             type: "SET_DOCK_TYPE",
             payload: "default",
         });
@@ -76,11 +79,13 @@ const Home = ({ setCurrentPage, setColorMode }) => {
     };
     return (
         <>
-            <Promotion />
-            <NewCover data={data.newCoverData} />
-            <BestCover data={data.newCoverData} />
-            <Banner link={"www.naver.com"} imgUrl={VoiceModelStudio} />
-            <BestVoiceModel data={data.bestVoiceModel} />
+            <div id="home">
+                <Promotion />
+                <NewCover data={data.newCoverData} />
+                <BestCover data={data.newCoverData} />
+                <Banner link={"www.naver.com"} imgUrl={VoiceModelStudio} />
+                <BestVoiceModel data={data.bestVoiceModel} />
+            </div>
         </>
     );
 };

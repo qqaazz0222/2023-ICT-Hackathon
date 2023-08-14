@@ -1,0 +1,57 @@
+#musicInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#musicInfo .songName {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--col-black);
+    margin-bottom: 8px;
+}
+
+#musicInfo .singerName {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--col-gray-5);
+    margin-bottom: 20px;
+}
+
+#musicInfo .thumb {
+    position: relative;
+    width: 100%;
+    height: 220px;
+}
+
+#musicInfo .thumb .bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    animation: turn 5s infinite linear;
+}
+
+@keyframes turn {
+    from {
+        transform: translate(-40%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-40%, -50%) rotate(360deg);
+    }
+}
+
+
+#musicInfo .thumb .thumbNail {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid var(--col-gray-1);
+    border-radius: 6px;
+    width: 180px;
+    height: 180px;
+    transform: translate(-60%, -50%);
+}

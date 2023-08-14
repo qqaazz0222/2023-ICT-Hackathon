@@ -1,0 +1,158 @@
+#recordHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-top: 72px;
+    width: 100%;
+    height: 68px;
+    background: var(--col-gray-2);
+    border-bottom: 1px solid var(--col-gray-4);
+}
+
+#recordHeader .songName {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--col-black);
+}
+
+#recordHeader .singer {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--col-gray-7);
+}
+
+#recordBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#recordBody .lyrics {
+    position: relative;
+    width: calc(100% - 96px);
+    height: 32px;
+    padding: 160px 48px;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    word-break: keep-all;
+    overflow: hidden;
+
+}
+
+#recordBody .lyrics .rows {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 96px);
+    height: 32px;
+    padding: 160px 48px;
+    font-size: 20px;
+    animation-name: scrollUp;
+    animation-duration: 240s;
+    animation-delay: 20s;
+}
+
+@keyframes scrollUp {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-1000px);
+    }
+}
+
+#recordBody .lyrics .focusTop {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 390px;
+    height: 160px;
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.3));
+    z-index: 1;
+}
+
+#recordBody .lyrics .focusBottom {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 390px;
+    height: 160px;
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 1));
+    z-index: 1;
+}
+
+#recordBody .lyrics .rows::-webkit-scrollbar {
+    display: none;
+}
+
+#recordBody .record {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    width: 100%;
+}
+
+#recordBody .record .timer {
+    margin-bottom: 24px;
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--col-black);
+}
+
+#recordBody .record .funcBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: var(--col-primary);
+    box-shadow: none;
+    transition: box-shadow .5s;
+}
+
+#recordBody .record .funcBtn:hover {
+    box-shadow: 0px 0px 20px var(--col-gray-3);
+}
+
+#recordBody .record .funcBtn .start {
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    background: var(--col-white);
+}
+
+
+#recordBody .record .funcBtn .stop {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background: var(--col-white);
+}
+
+#recordBody .record .disableBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: var(--col-gray-2);
+}
+
+#recordBody .record .disableBtn .start {
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    background: var(--col-gray-4);
+}

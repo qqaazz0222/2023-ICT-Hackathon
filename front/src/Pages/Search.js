@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./Styles/Search.css";
 // 컴포넌트
 import PageTitle from "../Components/PageTitle";
 import PageSubTitle from "../Components/PageSubTitle";
 import SearchInput from "../Components/SearchInput";
 import SearchItem from "../Components/SearchItem";
+import MusicItem from "../Components/MusicItem";
 const Search = ({ setCurrentPage, setColorMode }) => {
+    const keyword = useSelector((state) => state.searchKeyword);
+    const searchData = useSelector((state) => state.searchData);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        console.log(keyword);
+    }, [keyword]);
     useEffect(() => {
         dispatch({
             type: "SET_DOCK_TYPE",
@@ -34,10 +41,20 @@ const Search = ({ setCurrentPage, setColorMode }) => {
             <div id="search">
                 <PageTitle text="검색" />
                 <SearchInput />
-                <PageSubTitle text="급상승 검색어" />
-                {data.map((item, idx) => (
-                    <SearchItem no={idx + 1} value={item} />
-                ))}
+                {searchData.length > 0 ? (
+                    <>
+                        {searchData.map((item, idx) => (
+                            <MusicItem key={idx} data={item} />
+                        ))}
+                    </>
+                ) : (
+                    <>
+                        <PageSubTitle text="급상승 검색어" />
+                        {data.map((item, idx) => (
+                            <SearchItem no={idx + 1} value={item} />
+                        ))}
+                    </>
+                )}
             </div>
         </>
     );

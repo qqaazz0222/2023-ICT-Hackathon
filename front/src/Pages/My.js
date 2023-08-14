@@ -7,7 +7,7 @@ import OnProcess from "../Components/OnProcess";
 import DoneProcess from "../Components/DoneProcess";
 import "./Styles/My.css";
 
-const My = () => {
+const My = ({ setCurrentPage, setColorMode }) => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch({
@@ -15,6 +15,9 @@ const My = () => {
             payload: "default",
         });
     }, [dispatch]);
+    useEffect(() => {
+        setColorMode("light");
+    }, []);
     const [tabIdx, setTabIdx] = useState(0);
     const tabList = ["나의 커버곡", "나의 음성모델"];
     const data = {

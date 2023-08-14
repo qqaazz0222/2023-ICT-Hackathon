@@ -1,0 +1,33 @@
+#playStatus {
+    display: flex;
+    flex-direction: column;
+}
+
+#playStatus .barWrap {
+    display: flex;
+    flex-direction: row;
+    margin: 0 20px 4px 20px;
+    width: calc(100% - 40px);
+    height: 3px;
+    background: var(--col-gray-1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+#playStatus .barWrap .bar {
+    width: 1px;
+    height: 3px;
+    background: var(--col-primary);
+}
+
+#playStatus .time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px 32px 20px;
+    width: calc(100% - 40px);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--col-primary);
+}

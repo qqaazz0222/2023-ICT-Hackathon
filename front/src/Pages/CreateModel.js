@@ -2,7 +2,7 @@ import PageTitle from "../Components/PageTitle";
 import PageInfo from "../Components/PageInfo";
 import "./Styles/CreateModel.css";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const CreateModel = () => {
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const CreateModel = () => {
     }, [dispatch]);
     return (
         <div id="createModel">
-            <PageTitle text={"음성모델 만들기"} close={true} />
+            <PageTitle text={"음성모델 만들기"} close={true} preUrl={"/my"} />
             <PageInfo
                 text={"나의 목소리"}
                 subText={

@@ -25,7 +25,7 @@ const DoneProcess = ({ type, data }) => {
                     <button
                         className="btn-white-border"
                         onClick={() => {
-                            window.location.replace(
+                            document.location.replace(
                                 type === "커버곡"
                                     ? "/cover/create"
                                     : "/model/create"
